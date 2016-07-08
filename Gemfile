@@ -17,6 +17,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # ActiveAdmin
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
+gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
+gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 
 # Environments
 group :development, :test do
