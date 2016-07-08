@@ -20,6 +20,9 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'activeadmin-dragonfly', github: 'stefanoverna/activeadmin-dragonfly'
 gem 'activeadmin-wysihtml5', github: 'stefanoverna/activeadmin-wysihtml5'
 
+# Front-end
+gem 'font-awesome-sass', '~> 4.6.2'
+
 # Environments
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
