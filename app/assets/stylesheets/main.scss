@@ -4,10 +4,15 @@ a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,c
 
 header {
 	#nav_control { padding: 1em; position: absolute; top: 0; }
-	#menu_btn { color: #fff; cursor: pointer;
+	#menu_btn { color: #fff; cursor: pointer; position: absolute; z-index: 10001;
 		i { font-size: 1.8em; }
 	}
-	nav { position: absolute; z-index: 10000; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); }
+	nav { position: absolute; z-index: 10000; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); display: table;
+		ul { display: table-cell; height: 100%; vertical-align: middle; text-align: center;
+			li { margin-bottom: 1.2em; }
+			a { color: #fff; text-decoration: none; text-transform: uppercase; font-size: 1.4em; letter-spacing: 0.08em; }
+		}
+	}
 }
 
 main {

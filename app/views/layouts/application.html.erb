@@ -13,7 +13,12 @@
 				<%= icon('bars') %>
 			</span>
 		</div>
-		<nav class="hide"></nav>
+		<nav class="hide">
+			<ul>
+				<li><%= link_to "Home" %></li>
+				<li><%= link_to "Podcast" %></li>
+			</ul>
+		</nav>
 	</header>
 	<main>
 		<%= yield %>
