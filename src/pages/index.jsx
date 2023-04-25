@@ -63,7 +63,7 @@ function EpisodeEntry({ episode }) {
             <button
               type="button"
               onClick={() => player.toggle()}
-              className="flex items-center text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
+              className="flex items-center text-sm font-bold leading-6 text-brand-red-500 hover:text-brand-red-700 active:text-brand-red-900"
               aria-label={`${player.playing ? 'Pause' : 'Play'} episode ${
                 episode.title
               }`}
@@ -84,7 +84,7 @@ function EpisodeEntry({ episode }) {
             </span>
             <Link
               href={`/${episode.number}`}
-              className="flex items-center text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900"
+              className="flex items-center text-sm font-bold leading-6 text-brand-red-500 hover:text-brand-red-700 active:text-brand-red-900"
               aria-label={`Show notes for episode ${episode.title}`}
             >
               Show notes

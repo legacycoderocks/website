@@ -93,7 +93,7 @@ function AboutSection(props) {
     <section {...props}>
       <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
         <TinyWaveFormIcon
-          colors={['fill-violet-300', 'fill-pink-300']}
+          colors={['fill-brand-yellow-300', 'fill-brand-red-300']}
           className="h-2.5 w-2.5"
         />
         <span className="ml-2.5">About</span>
@@ -113,7 +113,7 @@ function AboutSection(props) {
       {!isExpanded && (
         <button
           type="button"
-          className="mt-2 hidden text-sm font-bold leading-6 text-pink-500 hover:text-pink-700 active:text-pink-900 lg:inline-block"
+          className="mt-2 hidden text-sm font-bold leading-6 text-brand-red-500 hover:text-brand-red-700 active:text-brand-red-900 lg:inline-block"
           onClick={() => setIsExpanded(true)}
         >
           Show more
@@ -379,7 +379,7 @@ export function Layout({children}) {
                       <section className="mt-10 lg:mt-12">
                         <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
                           <TinyWaveFormIcon
-                            colors={['fill-indigo-300', 'fill-blue-300']}
+                            colors={['fill-brand-yellow-300', 'fill-brand-red-300']}
                             className="h-2.5 w-2.5"
                           />
                           <span className="ml-2.5">Listen</span>

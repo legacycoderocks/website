@@ -54,8 +54,8 @@ function Thumb(props) {
         className={clsx(
           'h-4 rounded-full',
           isFocusVisible || state.isThumbDragging(index)
-            ? 'w-1.5 bg-slate-900'
-            : 'w-1 bg-slate-700'
+            ? 'w-1.5 bg-brand-red-700'
+            : 'w-1 bg-brand-red-500'
         )}
       >
         <VisuallyHidden>
@@ -106,8 +106,8 @@ export function Slider(props) {
           className={clsx(
             'h-2 md:rounded-l-xl md:rounded-r-md',
             isFocusVisible || state.isThumbDragging(0)
-              ? 'bg-slate-900'
-              : 'bg-slate-700'
+              ? 'bg-brand-red-700'
+              : 'bg-brand-red-500'
           )}
           style={{
             width:
