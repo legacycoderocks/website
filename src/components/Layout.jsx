@@ -2,75 +2,26 @@ import { Fragment, useId, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { Menu, Popover, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
 import { AudioPlayer } from '@/components/player/AudioPlayer'
-import posterImage from '@/images/poster.png'
+import squareLogo from '@/images/lcr-logo-square.svg'
+import sidewaysLogo from '@/images/lcr-logo-sideways.svg'
 
-function randomBetween(min, max, seed = 1) {
-  return () => {
-    let rand = Math.sin(seed++) * 10000
-    rand = rand - Math.floor(rand)
-    return Math.floor(rand * (max - min + 1) + min)
-  }
-}
-
-function Waveform(props) {
-  let id = useId()
-  let bars = {
-    total: 100,
-    width: 2,
-    gap: 2,
-    minHeight: 40,
-    maxHeight: 100,
-  }
-
-  let barHeights = Array.from(
-    { length: bars.total },
-    randomBetween(bars.minHeight, bars.maxHeight)
-  )
-
-  return (
-    <svg aria-hidden="true" {...props}>
-      <defs>
-        <linearGradient id={`${id}-fade`} x1="0" x2="0" y1="0" y2="1">
-          <stop offset="40%" stopColor="white" />
-          <stop offset="100%" stopColor="black" />
-        </linearGradient>
-        <linearGradient id={`${id}-gradient`}>
-          <stop offset="0%" stopColor="#4989E8" />
-          <stop offset="50%" stopColor="#6159DA" />
-          <stop offset="100%" stopColor="#FF54AD" />
-        </linearGradient>
-        <mask id={`${id}-mask`}>
-          <rect width="100%" height="100%" fill={`url(#${id}-pattern)`} />
-        </mask>
-        <pattern
-          id={`${id}-pattern`}
-          width={bars.total * bars.width + bars.total * bars.gap}
-          height="100%"
-          patternUnits="userSpaceOnUse"
-        >
-          {Array.from({ length: bars.total }, (_, index) => (
-            <rect
-              key={index}
-              width={bars.width}
-              height={`${barHeights[index]}%`}
-              x={bars.gap * (index + 1) + bars.width * index}
-              fill={`url(#${id}-fade)`}
-            />
-          ))}
-        </pattern>
-      </defs>
-      <rect
-        width="100%"
-        height="100%"
-        fill={`url(#${id}-gradient)`}
-        mask={`url(#${id}-mask)`}
-        opacity="0.25"
-      />
-    </svg>
-  )
-}
+const navigation = [
+  { name: 'Home', href: '#', current: true },
+  { name: 'Profile', href: '#', current: false },
+  { name: 'Resources', href: '#', current: false },
+  { name: 'Company Directory', href: '#', current: false },
+  { name: 'Openings', href: '#', current: false },
+]
+const userNavigation = [
+  { name: 'Your Profile', href: '#' },
+  { name: 'Settings', href: '#' },
+  { name: 'Sign out', href: '#' },
+]
 
 function TinyWaveFormIcon({ colors = [], ...props }) {
   return (
@@ -172,113 +123,309 @@ function AboutSection(props) {
   )
 }
 
-export function Layout({ children }) {
-  let hosts = ['Eric Gordon', 'Wes Mantooth']
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
 
+export function Layout({children}) {
   return (
     <>
-      <header className="bg-slate-50 lg:fixed lg:inset-y-0 lg:left-0 lg:flex lg:w-112 lg:items-start lg:overflow-y-auto xl:w-120">
-        <div className="hidden lg:sticky lg:top-0 lg:flex lg:w-16 lg:flex-none lg:items-center lg:whitespace-nowrap lg:py-12 lg:text-sm lg:leading-7 lg:[writing-mode:vertical-rl]">
-          <span className="font-mono text-slate-500">Hosted by</span>
-          <span className="mt-6 flex gap-6 font-bold text-slate-900">
-            {hosts.map((host, hostIndex) => (
-              <Fragment key={host}>
-                {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-slate-400">
-                    /
-                  </span>
-                )}
-                {host}
-              </Fragment>
-            ))}
-          </span>
-        </div>
-        <div className="relative z-10 mx-auto px-4 pb-4 pt-10 sm:px-6 md:max-w-2xl md:px-4 lg:min-h-full lg:flex-auto lg:border-x lg:border-slate-200 lg:px-8 lg:py-12 xl:px-12">
-          <Link
-            href="/"
-            className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
-            aria-label="Homepage"
-          >
-            <Image
-              className="w-full"
-              src={posterImage}
-              alt=""
-              sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem"
-              priority
-            />
-            <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl lg:rounded-2xl" />
-          </Link>
-          <div className="mt-10 text-center lg:mt-12 lg:text-left">
-            <p className="text-xl font-bold text-slate-900">
-              <Link href="/">Their Side</Link>
-            </p>
-            <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
-              Conversations with the most tragically misunderstood people of our
-              time.
-            </p>
-          </div>
-          <AboutSection className="mt-12 hidden lg:block" />
-          <section className="mt-10 lg:mt-12">
-            <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
-              <TinyWaveFormIcon
-                colors={['fill-indigo-300', 'fill-blue-300']}
-                className="h-2.5 w-2.5"
-              />
-              <span className="ml-2.5">Listen</span>
-            </h2>
-            <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
-            <ul
-              role="list"
-              className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
-            >
-              {[
-                ['Spotify', SpotifyIcon],
-                ['Apple Podcast', ApplePodcastIcon],
-                ['Overcast', OvercastIcon],
-                ['RSS Feed', RSSIcon],
-              ].map(([label, Icon]) => (
-                <li key={label} className="flex">
-                  <Link
-                    href="/"
-                    className="group flex items-center"
-                    aria-label={label}
+      <div className="min-h-full">
+        <Popover as="header" className="bg-brand-yellow-500 pb-24">
+          {({ open }) => (
+            <>
+              <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+                <div className="relative flex items-center justify-center py-5 lg:justify-between">
+                  {/* Logo */}
+                  <div className="absolute left-0 -ml-2 top-2 flex-shrink-0 lg:static">
+                    <a href="#">
+                      <span className="sr-only">Legacy Code Rocks!</span>
+                      <Image
+                        className="h-18 w-auto"
+                        src={sidewaysLogo}
+                        alt="Legacy Code Rocks!"
+                        priority
+                      />
+                    </a>
+                  </div>
+
+                  {/* Search */}
+                  <div className="min-w-0 flex-1 lg:hidden">
+                    <div className="w-full max-w-s mt-20 ml-0">
+                      <label htmlFor="mobile-search" className="sr-only">
+                        Search
+                      </label>
+                      <div className="relative text-brand-yellow-900 focus-within:text-gray-800">
+                        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                          <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
+                        </div>
+                        <input
+                          id="mobile-search"
+                          className="block w-full rounded-md border-0 bg-brand-yellow-400 py-1.5 pl-10 pr-3 text-black placeholder:text-brand-yellow-900 focus:bg-brand-yellow-400 focus:text-gray-900 focus:ring-0 focus:placeholder:text-gray-900 sm:text-sm sm:leading-6"
+                          placeholder="Search"
+                          type="search"
+                          name="search"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Menu button */}
+                  <div className="absolute -mt-20 right-0 flex-shrink-0 lg:hidden">
+                    {/* Mobile menu button */}
+                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100 hover:bg-opacity-50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
+                      <span className="sr-only">Open main menu</span>
+                      {open ? (
+                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                      ) : (
+                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                      )}
+                    </Popover.Button>
+                  </div>
+                </div>
+                <div className="hidden border-t border-white border-opacity-20 py-5 lg:block">
+                  <div className="grid grid-cols-3 items-center gap-8">
+                    <div className="col-span-2">
+                      <nav className="flex space-x-4">
+                        {navigation.map((item) => (
+                          <a
+                            key={item.name}
+                            href={item.href}
+                            className={classNames(
+                              item.current ? 'text-black' : 'text-brand-yellow-900',
+                              'rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-30'
+                            )}
+                            aria-current={item.current ? 'page' : undefined}
+                          >
+                            {item.name}
+                          </a>
+                        ))}
+                      </nav>
+                    </div>
+                    <div>
+                      <div className="mx-auto w-full max-w-md">
+                        <label htmlFor="desktop-search" className="sr-only">
+                          Search
+                        </label>
+                        <div className="relative text-brand-yellow-900 focus-within:text-gray-800">
+                          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                            <MagnifyingGlassIcon className="h-5 w-5" aria-hidden="true" />
+                          </div>
+                          <input
+                            id="desktop-search"
+                            className="block w-full rounded-md border-0 bg-brand-yellow-400 py-1.5 pl-10 pr-3 text-black placeholder:text-brand-yellow-900 focus:bg-brand-yellow-400 focus:text-gray-900 focus:ring-0 focus:placeholder:text-gray-900 sm:text-sm sm:leading-6"
+                            placeholder="Search"
+                            type="search"
+                            name="search"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <Transition.Root as={Fragment}>
+                <div className="lg:hidden">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="duration-150 ease-out"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="duration-150 ease-in"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
                   >
-                    <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
-                    <span className="hidden sm:ml-3 sm:block">{label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-      </header>
-      <main className="border-t border-slate-200 lg:relative lg:mb-28 lg:ml-112 lg:border-t-0 xl:ml-120">
-        <Waveform className="absolute left-0 top-0 h-20 w-full" />
-        <div className="relative">{children}</div>
-      </main>
-      <footer className="border-t border-slate-200 bg-slate-50 py-10 pb-40 sm:py-16 sm:pb-32 lg:hidden">
-        <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4">
-          <AboutSection />
-          <h2 className="mt-8 flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
-            <PersonIcon className="h-3 w-auto fill-slate-300" />
-            <span className="ml-2.5">Hosted by</span>
-          </h2>
-          <div className="mt-2 flex gap-6 text-sm font-bold leading-7 text-slate-900">
-            {hosts.map((host, hostIndex) => (
-              <Fragment key={host}>
-                {hostIndex !== 0 && (
-                  <span aria-hidden="true" className="text-slate-400">
-                    /
-                  </span>
-                )}
-                {host}
-              </Fragment>
-            ))}
+                    <Popover.Overlay className="fixed inset-0 z-20 bg-black bg-opacity-25" />
+                  </Transition.Child>
+
+                  <Transition.Child
+                    as={Fragment}
+                    enter="duration-150 ease-out"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="duration-150 ease-in"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <Popover.Panel
+                      focus
+                      className="absolute inset-x-0 top-0 z-30 mx-auto w-full max-w-3xl origin-top transform p-2 transition"
+                    >
+                      <div className="divide-y divide-gray-500 rounded-lg bg-brand-yellow-500 shadow-lg ring-1 ring-black ring-opacity-5">
+                        <div className="pb-2 pt-3">
+                          <div className="flex items-center justify-between px-4">
+                            <div>
+                              <Image
+                                className="h-18 w-auto"
+                                src={sidewaysLogo}
+                                alt="Legacy Code Rocks!"
+                                priority
+                              />
+                            </div>
+                            <div className="-mr-2">
+                              <Popover.Button className="inline-flex items-center justify-center rounded-md bg-brand-yellow-100 p-2 text-brand-yellow-900 hover:bg-brand-yellow-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow-900">
+                                <span className="sr-only">Close menu</span>
+                                <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                              </Popover.Button>
+                            </div>
+                          </div>
+                          <div className="mt-3 space-y-1 px-2">
+                            <a
+                              href="#"
+                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                            >
+                              Home
+                            </a>
+                            <a
+                              href="#"
+                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                            >
+                              Profile
+                            </a>
+                            <a
+                              href="#"
+                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                            >
+                              Resources
+                            </a>
+                            <a
+                              href="#"
+                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                            >
+                              Company Directory
+                            </a>
+                            <a
+                              href="#"
+                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                            >
+                              Openings
+                            </a>
+                          </div>
+                        </div>
+                        <div className="pb-2 pt-4">
+                          <div className="px-2">
+                            {userNavigation.map((item) => (
+                              <a
+                                key={item.name}
+                                href={item.href}
+                                className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
+                              >
+                                {item.name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    </Popover.Panel>
+                  </Transition.Child>
+                </div>
+              </Transition.Root>
+            </>
+          )}
+        </Popover>
+        <main className="-mt-24 pb-8">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+            <h1 className="sr-only">Page title</h1>
+            {/* Main 3 column grid */}
+            <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-3 lg:gap-8">
+              {/* Left column */}
+              <div className="grid grid-cols-1 gap-4 lg:col-span-2">
+                <section aria-labelledby="section-1-title">
+                  <h2 className="sr-only" id="section-1-title">
+                    Section title
+                  </h2>
+                  <div className="overflow-hidden rounded-lg bg-white shadow">
+                    <div className="p-6">
+                      {children}
+                    </div>
+                  </div>
+                </section>
+              </div>
+
+              {/* Right column */}
+              <div className="grid grid-cols-1 gap-4">
+                <section aria-labelledby="section-2-title">
+                  <h2 className="sr-only" id="section-2-title">
+                    Section title
+                  </h2>
+                  <div className="overflow-hidden rounded-lg bg-white shadow">
+                    <div className="p-6">
+                      {/* Right column content */}
+                      <Link
+                        href="/"
+                        className="relative mx-auto block w-48 overflow-hidden rounded-lg bg-slate-200 shadow-xl shadow-slate-200 sm:w-64 sm:rounded-xl lg:w-auto lg:rounded-2xl"
+                        aria-label="Homepage"
+                      >
+                        <Image
+                          className="w-full"
+                          src={squareLogo}
+                          alt=""
+                          sizes="(min-width: 1024px) 20rem, (min-width: 640px) 16rem, 12rem"
+                          priority
+                        />
+                        <div className="absolute inset-0 rounded-lg ring-1 ring-inset ring-black/10 sm:rounded-xl lg:rounded-2xl" />
+                      </Link>
+                      <div className="mt-10 text-center lg:mt-12 lg:text-left">
+                        <p className="text-xl font-bold text-slate-900">
+                          <Link href="/">Their Side</Link>
+                        </p>
+                        <p className="mt-3 text-lg font-medium leading-8 text-slate-700">
+                          Conversations with the most tragically misunderstood people of our
+                          time.
+                        </p>
+                      </div>
+                      <AboutSection className="mt-12 hidden lg:block" />
+                      <section className="mt-10 lg:mt-12">
+                        <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
+                          <TinyWaveFormIcon
+                            colors={['fill-indigo-300', 'fill-blue-300']}
+                            className="h-2.5 w-2.5"
+                          />
+                          <span className="ml-2.5">Listen</span>
+                        </h2>
+                        <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+                        <ul
+                          role="list"
+                          className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
+                        >
+                          {[
+                            ['Spotify', SpotifyIcon],
+                            ['Apple Podcast', ApplePodcastIcon],
+                            ['Overcast', OvercastIcon],
+                            ['RSS Feed', RSSIcon],
+                          ].map(([label, Icon]) => (
+                            <li key={label} className="flex">
+                              <Link
+                                href="/"
+                                className="group flex items-center"
+                                aria-label={label}
+                              >
+                                <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
+                                <span className="hidden sm:ml-3 sm:block">{label}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </section>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
           </div>
+        </main>
+        <footer>
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 pb-40 sm:py-16 sm:pb-32">
+            <div className="border-t border-gray-200 py-8 text-center text-sm text-gray-500 sm:text-left">
+              <span className="block sm:inline">&copy; 2021 Your Company, Inc.</span>{' '}
+              <span className="block sm:inline">All rights reserved.</span>
+            </div>
+          </div>
+        </footer>
+        <div className="fixed inset-x-0 bottom-0 z-10">
+          <AudioPlayer />
         </div>
-      </footer>
-      <div className="fixed inset-x-0 bottom-0 z-10 lg:left-112 xl:left-120">
-        <AudioPlayer />
       </div>
     </>
   )
