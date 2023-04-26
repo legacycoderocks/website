@@ -101,6 +101,20 @@ export default function Community() {
             View the Repository
           </SignUpButton>
         </CardWithHeader>
+
+        <CardWithHeader title="Improve This Website">
+          <p>
+            The <a href="https://github.com/legacycoderocks/website">source code</a>{' '} 
+            for this website is published on GitHub as an open source project. 
+            If you see something that you'd like to change, please open up a 
+            pull request or create an issue.
+          </p>
+
+          <SignUpButton href="https://github.com/legacycoderocks/website">
+            View the Source
+          </SignUpButton>
+        </CardWithHeader>
+
       </ProseContainer>
     </>
   )
