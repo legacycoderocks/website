@@ -142,7 +142,7 @@ export function Layout({children}) {
                   {/* Search */}
                   <div className="min-w-0 flex-1 lg:hidden">
                     <div className="w-full max-w-s mt-20 ml-0">
-                      <label htmlFor="mobile-search" className="sr-only">
+                      {/* <label htmlFor="mobile-search" className="sr-only">
                         Search
                       </label>
                       <div className="relative text-brand-yellow-900 focus-within:text-gray-800">
@@ -156,12 +156,12 @@ export function Layout({children}) {
                           type="search"
                           name="search"
                         />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
 
                   {/* Menu button */}
-                  <div className="absolute -mt-20 right-0 flex-shrink-0 lg:hidden">
+                  <div className="absolute -mt-4 right-0 flex-shrink-0 lg:hidden">
                     {/* Mobile menu button */}
                     <Popover.Button className="inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100 hover:bg-opacity-50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
                       <span className="sr-only">Open main menu</span>
@@ -194,7 +194,7 @@ export function Layout({children}) {
                     </div>
                     <div>
                       <div className="mx-auto w-full max-w-md">
-                        <label htmlFor="desktop-search" className="sr-only">
+                        {/* <label htmlFor="desktop-search" className="sr-only">
                           Search
                         </label>
                         <div className="relative text-brand-yellow-900 focus-within:text-gray-800">
@@ -208,7 +208,7 @@ export function Layout({children}) {
                             type="search"
                             name="search"
                           />
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
