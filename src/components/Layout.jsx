@@ -128,6 +128,8 @@ function classNames(...classes) {
 }
 
 export function Layout({children}) {
+  const copyrightYear = new Date().getFullYear();
+
   return (
     <>
       <div className="min-h-full">
@@ -417,8 +419,8 @@ export function Layout({children}) {
         <footer>
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 pb-40 sm:py-16 sm:pb-32">
             <div className="border-t border-gray-200 py-8 text-center text-sm text-gray-500 sm:text-left">
-              <span className="block sm:inline">&copy; 2021 Your Company, Inc.</span>{' '}
-              <span className="block sm:inline">All rights reserved.</span>
+              <span className="block sm:inline">&copy; {copyrightYear} Corgibytes, LLC</span>{' '}
+              <span className="block sm:inline">Content licensed under Creative Commons <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>.</span>
             </div>
           </div>
         </footer>
