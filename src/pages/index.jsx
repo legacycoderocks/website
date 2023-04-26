@@ -101,8 +101,7 @@ export default function Home({ episodes }) {
     <>
       <Head>
         <title>
-          Their Side - Conversations with the most tragically misunderstood
-          people of our time
+          Legacy Code Rocks - Explore the world of modernizing existing software applications
         </title>
         <meta
           name="description"

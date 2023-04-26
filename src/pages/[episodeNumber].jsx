@@ -27,7 +27,7 @@ export default function Episode({ episode }) {
   return (
     <>
       <Head>
-        <title>{`${episode.title} - Their Side`}</title>
+        <title>{`${episode.title} - Legacy Code Rocks`}</title>
         <meta name="description" content={episode.description} />
       </Head>
       <article className="py-16 lg:py-36">
