@@ -62,10 +62,10 @@ export default function Episode({ episode }) {
 
 export async function getStaticProps({ params }) {
   const episodes = await getEpisodes()
+  
   let episode = episodes.find(({ number }) => {
-      console.log(number.toString())
-      return number.toString() === params.episodeNumber
-    })
+    return number.toString() === params.episodeNumber
+  })
 
   if (!episode) {
     return {
