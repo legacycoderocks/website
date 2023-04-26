@@ -98,18 +98,19 @@ function AboutSection(props) {
         />
         <span className="ml-2.5">About</span>
       </h2>
-      <p
+      <div
         className={clsx(
           'mt-2 text-base leading-7 text-slate-700',
           !isExpanded && 'lg:line-clamp-4'
         )}
       >
-        In this show, Eric and Wes dig deep to get to the facts with guests who
-        have been labeled villains by a society quick to judge, without actually
-        getting the full story. Tune in every Thursday to get to the truth with
-        another misunderstood outcast as they share the missing context in their
-        tragic tale.
-      </p>
+        <p>
+          In this show, Hosts Andrea Goulet and M. Scott Ford of Corgibytes are out to change the way you think about legacy code.
+        </p>
+        <p className="mt-3">
+          If you’re like a lot of people, when you hear the words “legacy code” it conjures up images of big mainframes and archaic punch card machines. While that’s true — it only tells a small part of the story. The truth is, the code you leave behind is your legacy, so let's make it a good one.
+        </p>
+      </div>
       {!isExpanded && (
         <button
           type="button"
