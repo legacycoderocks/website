@@ -11,16 +11,9 @@ import squareLogo from '@/images/lcr-logo-square.svg'
 import sidewaysLogo from '@/images/lcr-logo-sideways.svg'
 
 const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Profile', href: '#', current: false },
-  { name: 'Resources', href: '#', current: false },
-  { name: 'Company Directory', href: '#', current: false },
-  { name: 'Openings', href: '#', current: false },
-]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Community', href: '/community', current: false },
+  { name: 'About', href: '/about', current: false },
 ]
 
 function TinyWaveFormIcon({ colors = [], ...props }) {
@@ -74,14 +67,6 @@ function RSSIcon(props) {
         clipRule="evenodd"
         d="M8.5 4h15A4.5 4.5 0 0 1 28 8.5v15a4.5 4.5 0 0 1-4.5 4.5h-15A4.5 4.5 0 0 1 4 23.5v-15A4.5 4.5 0 0 1 8.5 4ZM13 22a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm-6-6a9 9 0 0 1 9 9h3A12 12 0 0 0 7 13v3Zm5.74-4.858A15 15 0 0 0 7 10V7a18 18 0 0 1 18 18h-3a15 15 0 0 0-9.26-13.858Z"
       />
-    </svg>
-  )
-}
-
-function PersonIcon(props) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 11 12" {...props}>
-      <path d="M5.019 5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Zm3.29 7c1.175 0 2.12-1.046 1.567-2.083A5.5 5.5 0 0 0 5.019 7 5.5 5.5 0 0 0 .162 9.917C-.39 10.954.554 12 1.73 12h6.578Z" />
     </svg>
   )
 }
@@ -274,47 +259,13 @@ export function Layout({children}) {
                             </div>
                           </div>
                           <div className="mt-3 space-y-1 px-2">
-                            <a
-                              href="#"
-                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
-                            >
-                              Home
-                            </a>
-                            <a
-                              href="#"
-                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
-                            >
-                              Profile
-                            </a>
-                            <a
-                              href="#"
-                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
-                            >
-                              Resources
-                            </a>
-                            <a
-                              href="#"
-                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
-                            >
-                              Company Directory
-                            </a>
-                            <a
-                              href="#"
-                              className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
-                            >
-                              Openings
-                            </a>
-                          </div>
-                        </div>
-                        <div className="pb-2 pt-4">
-                          <div className="px-2">
-                            {userNavigation.map((item) => (
+                            {navigation.map(({name, href}) => (
                               <a
-                                key={item.name}
-                                href={item.href}
+                                key={name}
+                                href={href}
                                 className="block rounded-md px-3 py-2 text-base font-medium text-black hover:bg-brand-yellow-100 hover:text-gray-800"
                               >
-                                {item.name}
+                                {name}
                               </a>
                             ))}
                           </div>
