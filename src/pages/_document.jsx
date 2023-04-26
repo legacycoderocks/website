@@ -13,6 +13,9 @@ export default function Document() {
           rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap"
         />
+        <link rel="icon" sizes="192x192" href="/favicon-192.png"></link>
+        <link rel="shortcut icon" href="/favicon-192.png" type="image/png"></link>
+        <link rel="apple-touch-icon" href="/favicon-192.png" type="image/png"></link>
       </Head>
       <body className="h-full">
         <Main />
