@@ -345,14 +345,14 @@ export function Layout({children}) {
                           className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
                         >
                           {[
-                            ['Spotify', SpotifyIcon],
-                            ['Apple Podcast', ApplePodcastIcon],
-                            ['Overcast', OvercastIcon],
-                            ['RSS Feed', RSSIcon],
-                          ].map(([label, Icon]) => (
+                            ['Spotify', SpotifyIcon, "https://open.spotify.com/show/6fDObJQiPUB825TybDKO2B"],
+                            ['Apple Podcast', ApplePodcastIcon, "https://podcasts.apple.com/us/podcast/legacy-code-rocks/id1146634772"],
+                            ['Overcast', OvercastIcon, "https://overcast.fm/itunes1146634772"],
+                            ['RSS Feed', RSSIcon, "https://feeds.libsyn.com/82186/rss"],
+                          ].map(([label, Icon, url]) => (
                             <li key={label} className="flex">
                               <Link
-                                href="/"
+                                href={url}
                                 className="group flex items-center"
                                 aria-label={label}
                               >
