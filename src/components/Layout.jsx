@@ -91,10 +91,15 @@ function AboutSection(props) {
         )}
       >
         <p>
-          In this show, Hosts Andrea Goulet and M. Scott Ford of Corgibytes are out to change the way you think about legacy code.
+          In this show, Hosts Andrea Goulet and M. Scott Ford of Corgibytes 
+          are out to change the way you think about legacy code.
         </p>
         <p className="mt-3">
-          If you’re like a lot of people, when you hear the words “legacy code” it conjures up images of big mainframes and archaic punch card machines. While that’s true — it only tells a small part of the story. The truth is, the code you leave behind is your legacy, so let's make it a good one.
+          If you&apos;re like a lot of people, when you hear the words &quot;legacy code&quot;
+          it conjures up images of big mainframes and archaic punch card 
+          machines. While that&apos;s true — it only tells a small part of the 
+          story. The code you leave behind is your legacy, so let&apos;s make it 
+          a good one.
         </p>
       </div>
       {!isExpanded && (

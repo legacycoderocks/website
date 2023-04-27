@@ -33,9 +33,9 @@ export default function About({episodeCount}) {
           mentality that this show is out to shift.
         </p>
         <p>
-          Most episodes are less than 1 hour long. We've 
+          Most episodes are less than 1 hour long. We&apos;ve 
           published {episodeCount} episodes so far, and we still have a lot more
-          that we'd like to explore and say.
+          that we&apos;d like to explore and say.
         </p>
       </ProseContainer>
     </>

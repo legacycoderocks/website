@@ -46,7 +46,7 @@ export default function Community() {
       <ProseContainer>
         <h1>Connect with Menders</h1>
         <p>
-          Legacy Code Rocks isn't <em>just</em> a podcast. It's also a thriving
+          Legacy Code Rocks isn&apos;t <em>just</em> a podcast. It&apos;s also a thriving
           community. There are several ways that you can connect with other
           listeners. Check out the options below.
         </p>
@@ -90,7 +90,7 @@ export default function Community() {
         <CardWithHeader title="Explore Example Codebases">
           <p>
             We feel strongly that examining codebases can be a great way to 
-            learn. We've compiled and continue to nurture a list of notable
+            learn. We&apos;ve compiled and continue to nurture a list of notable
             codebases that have source code available. Want to see the code
             that landed humans on the moon? Want to dig into the source for
             the first web browser? Come and take a peek at <a href="https://github.com/legacycoderocks/awesome-legacy-code">
@@ -106,7 +106,7 @@ export default function Community() {
           <p>
             The <a href="https://github.com/legacycoderocks/website">source code</a>{' '} 
             for this website is published on GitHub as an open source project. 
-            If you see something that you'd like to change, please open up a 
+            If you see something that you&apos;d like to change, please open up a 
             pull request or create an issue.
           </p>
 
