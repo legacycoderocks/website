@@ -29,6 +29,5 @@ export async function getStaticProps() {
       pageOneEpisodes,
       allPageNumbers
     },
-    revalidate: 10,
   }
 }

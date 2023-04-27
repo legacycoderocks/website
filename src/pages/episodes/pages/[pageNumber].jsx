@@ -38,7 +38,6 @@ export async function getStaticProps({ params }) {
       episodesForCurrentPage,
       allPageNumbers 
     },
-    revalidate: 10,
   }
 }
 
