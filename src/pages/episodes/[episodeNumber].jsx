@@ -88,6 +88,6 @@ export async function getStaticPaths() {
         episodeNumber: number.toString(),
       },
     })),
-    fallback: 'blocking',
+    fallback: false,
   }
 }
