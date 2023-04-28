@@ -80,7 +80,7 @@ export function EpisodeEntry({ episode }) {
               /
             </span>
             <Link
-              href={`/${episode.number}`}
+              href={`/episodes/${episode.number}`}
               className="flex items-center text-sm font-bold leading-6 text-brand-red-500 hover:text-brand-red-700 active:text-brand-red-900"
               aria-label={`Show notes for episode ${episode.title}`}
             >
