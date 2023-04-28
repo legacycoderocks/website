@@ -25,6 +25,8 @@ jobs:
         with:
           node-version: 19.x
           cache: 'npm'
+
+      - uses: jongwooo/next-cache@v1
       
       - run: npm ci
       
