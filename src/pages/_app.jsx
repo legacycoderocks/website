@@ -5,11 +5,13 @@ import '@/styles/tailwind.css'
 import 'focus-visible'
 
 export default function App({ Component, pageProps }) {
-  return (
+  const getLayout = Component.getLayout || ((page) => 
     <AudioProvider>
       <Layout>
-        <Component {...pageProps} />
+        {page}
       </Layout>
     </AudioProvider>
   )
+
+  return getLayout(<Component {...pageProps} />)
 }
