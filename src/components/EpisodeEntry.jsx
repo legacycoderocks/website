@@ -48,7 +48,7 @@ export function EpisodeEntry({ episode }) {
             id={`episode-${episode.number}-title`}
             className="mt-2 text-lg font-bold text-slate-900"
           >
-            <Link href={`/${episode.number}`}>{episode.title}</Link>
+            <Link href={`/episodes/${episode.number}`}>{episode.title}</Link>
           </h2>
           <FormattedDate
             date={date}
