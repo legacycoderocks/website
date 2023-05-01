@@ -14,7 +14,7 @@
     "autoprefixer": "^10.4.12",
     "clsx": "^1.2.1",
     "focus-visible": "^5.2.0",
-    "next": "13.3.0",
+    "next": "13.3.4",
     "postcss-focus-visible": "^6.0.4",
     "react": "18.2.0",
     "react-aria": "^3.19.0",
