@@ -28,7 +28,7 @@ This site is based on the [Transmit](https://tailwindui.com/templates/transmit) 
 > ...
 > * Use the Components and Templates to create End Products that are open source and freely available to End Users.
 
-With the above notice, the code in this repository is published under the MIT license.
+With the above notice, the code in this repository is published under the [Creative Commons, Attribution-ShareAlike license](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Learn more
 
