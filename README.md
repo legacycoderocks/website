@@ -2,7 +2,7 @@
 
 This is the website for the Legacy Code Rocks community and podcast.
 
-It started out as an implementation of the [Transmit](https://tailwindui.com/templates/transmit) is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org). It has been modified from it's original version.
+It started out as an implementation of the [Transmit](https://tailwindui.com/templates/transmit) is a [Tailwind UI](https://tailwindui.com) site template built using [Tailwind CSS](https://tailwindcss.com) and [Next.js](https://nextjs.org). It has been modified from its original version.
 
 ## Getting started
 
