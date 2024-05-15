@@ -15,6 +15,7 @@ const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Community', href: '/community' },
   { name: 'About', href: '/about' },
+  { name: 'Pitch a Guest', href: '/pitch' },
 ]
 
 function TinyWaveFormIcon({ colors = [], ...props }) {
