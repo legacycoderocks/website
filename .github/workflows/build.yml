@@ -34,13 +34,13 @@ jobs:
       - run: npm run build
       
       - name: Archive site as artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: out
           path: out
 
       - name: Archive s3_website.yml as artifact
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v4
         with:
           name: s3_website
           path: s3_website.yml
@@ -56,7 +56,7 @@ jobs:
           name: out
 
       - name: Retrieve s3_website.yml from artifacts
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v4
         with:
           name: s3_website
 
