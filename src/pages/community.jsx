@@ -70,7 +70,7 @@ export default function Community() {
             katas, hash out project challenges, and more. 
           </p>
 
-          <SignUpButton href="https://us02web.zoom.us/j/88113500864?pwd=YlNzSXQzeUdlVzVZL05yRmNGWVlUZz09">
+          <SignUpButton href="https://meet.google.com/buk-zhcx-xze">
             Join Now
           </SignUpButton>
         </CardWithHeader>
