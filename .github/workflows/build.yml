@@ -62,7 +62,7 @@ jobs:
 
       - name: Move s3_website.yml into root
         run: |
-          mv s3_website/s3_website.yml s3_website.yml
+          mv s3_website.yml s3_website.yml
             
       - name: S3 Publish
         uses: docker://justinharringa/s3_website:master
