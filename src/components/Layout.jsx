@@ -13,6 +13,7 @@ import sidewaysLogo from '@/images/lcr-logo-sideways.svg'
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Supporters', href: '/supporters' },
   { name: 'Community', href: '/community' },
   { name: 'About', href: '/about' },
   { name: 'Pitch a Guest', href: '/pitch' },

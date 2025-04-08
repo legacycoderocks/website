@@ -10,6 +10,8 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@nathanhigh/patreon": "^0.5.2",
+    "@next/env": "^15.2.4",
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.12",
     "clsx": "^1.2.1",
