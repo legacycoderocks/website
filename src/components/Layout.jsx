@@ -74,6 +74,31 @@ function RSSIcon(props) {
   )
 }
 
+function PatreonIcon(props) {
+  // Retrieved from https://www.svgrepo.com/svg/354168/patreon
+  // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools
+  return (
+    <svg aria-hidden="true" viewBox="-25 -4.5 256 256" {...props}>
+      <g transform="scale(0.78)">
+        <path d="M45.1355837,0 L45.1355837,246.35001 L0,246.35001 L0,0 L45.1355837,0 Z M163.657111,0 C214.65668,0 256,41.3433196 256,92.3428889 C256,143.342458 214.65668,184.685778 163.657111,184.685778 C112.657542,184.685778 71.3142222,143.342458 71.3142222,92.3428889 C71.3142222,41.3433196 112.657542,0 163.657111,0 Z"/>
+      </g>
+    </svg>
+  )
+}
+
+function SlackIcon(props) {
+  // Retrieved from https://www.svgrepo.com/svg/452102/slack
+  // Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+  return (
+    <svg aria-hidden="true" viewBox="0 0 32 32" {...props}>
+      <path d="M26.5002 14.9996C27.8808 14.9996 29 13.8804 29 12.4998C29 11.1192 27.8807 10 26.5001 10C25.1194 10 24 11.1193 24 12.5V14.9996H26.5002ZM19.5 14.9996C20.8807 14.9996 22 13.8803 22 12.4996V5.5C22 4.11929 20.8807 3 19.5 3C18.1193 3 17 4.11929 17 5.5V12.4996C17 13.8803 18.1193 14.9996 19.5 14.9996Z" />
+      <path d="M5.49979 17.0004C4.11919 17.0004 3 18.1196 3 19.5002C3 20.8808 4.1193 22 5.49989 22C6.8806 22 8 20.8807 8 19.5V17.0004H5.49979ZM12.5 17.0004C11.1193 17.0004 10 18.1197 10 19.5004V26.5C10 27.8807 11.1193 29 12.5 29C13.8807 29 15 27.8807 15 26.5V19.5004C15 18.1197 13.8807 17.0004 12.5 17.0004Z" />
+      <path d="M17.0004 26.5002C17.0004 27.8808 18.1196 29 19.5002 29C20.8808 29 22 27.8807 22 26.5001C22 25.1194 20.8807 24 19.5 24L17.0004 24L17.0004 26.5002ZM17.0004 19.5C17.0004 20.8807 18.1197 22 19.5004 22L26.5 22C27.8807 22 29 20.8807 29 19.5C29 18.1193 27.8807 17 26.5 17L19.5004 17C18.1197 17 17.0004 18.1193 17.0004 19.5Z" />
+      <path d="M14.9996 5.49979C14.9996 4.11919 13.8804 3 12.4998 3C11.1192 3 10 4.1193 10 5.49989C10 6.88061 11.1193 8 12.5 8L14.9996 8L14.9996 5.49979ZM14.9996 12.5C14.9996 11.1193 13.8803 10 12.4996 10L5.5 10C4.11929 10 3 11.1193 3 12.5C3 13.8807 4.11929 15 5.5 15L12.4996 15C13.8803 15 14.9996 13.8807 14.9996 12.5Z" />
+    </svg>
+  )
+}
+
 function AboutSection(props) {
   let [isExpanded, setIsExpanded] = useState(false)
 
@@ -112,6 +137,78 @@ function AboutSection(props) {
           Show more
         </button>
       )}
+    </section>
+  )
+}
+
+function ListenSection(props) {
+  return (
+    <section {...props}>
+      <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
+        <TinyWaveFormIcon
+          colors={['fill-brand-yellow-300', 'fill-brand-red-300']}
+          className="h-2.5 w-2.5"
+        />
+        <span className="ml-2.5">Listen</span>
+      </h2>
+      <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+      <ul
+        role="list"
+        className="mt-4 flex lg:justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
+      >
+        {[
+          ['Spotify', SpotifyIcon, "https://open.spotify.com/show/6fDObJQiPUB825TybDKO2B"],
+          ['Apple Podcast', ApplePodcastIcon, "https://podcasts.apple.com/us/podcast/legacy-code-rocks/id1146634772"],
+          ['Overcast', OvercastIcon, "https://overcast.fm/itunes1146634772"],
+          ['RSS Feed', RSSIcon, "https://feeds.libsyn.com/82186/rss"],
+        ].map(([label, Icon, url]) => (
+          <li key={label} className="flex">
+            <Link
+              href={url}
+              className="group flex items-center"
+              aria-label={label}
+            >
+              <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
+              <span className="hidden sm:ml-3 sm:block">{label}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+function EngageSection(props) {
+  return (
+    <section {...props}>
+      <h2 className="flex items-center font-mono text-sm font-medium leading-7 text-slate-900">
+        <TinyWaveFormIcon
+          colors={['fill-brand-yellow-300', 'fill-brand-red-300']}
+          className="h-2.5 w-2.5"
+        />
+        <span className="ml-2.5">Engage</span>
+      </h2>
+      <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+      <ul
+        role="list"
+        className="mt-4 flex lg:justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
+      >
+        {[
+          ['Patreon', PatreonIcon, "https://www.patreon.com/legacycoderocks"],
+          ['Slack', SlackIcon, "http://slack.legacycode.rocks"],
+        ].map(([label, Icon, url]) => (
+          <li key={label} className="flex">
+            <Link
+              href={url}
+              className="group flex items-center"
+              aria-label={label}
+            >
+              <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
+              <span className="hidden sm:ml-3 sm:block">{label}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }
@@ -309,7 +406,7 @@ export function Layout({children}) {
               <div className="grid grid-cols-1 gap-4">
                 <section aria-labelledby="section-2-title">
                   <h2 className="sr-only" id="section-2-title">
-                    Section title
+                    Additional Info
                   </h2>
                   <div className="overflow-hidden rounded-lg bg-white shadow">
                     <div className="p-6">
@@ -336,39 +433,9 @@ export function Layout({children}) {
                           Legacy Code Rocks explores the world of modernizing existing software applications.
                         </p>
                       </div>
-                      <AboutSection className="mt-12 hidden lg:block" />
-                      <section className="mt-10 lg:mt-12">
-                        <h2 className="sr-only flex items-center font-mono text-sm font-medium leading-7 text-slate-900 lg:not-sr-only">
-                          <TinyWaveFormIcon
-                            colors={['fill-brand-yellow-300', 'fill-brand-red-300']}
-                            className="h-2.5 w-2.5"
-                          />
-                          <span className="ml-2.5">Listen</span>
-                        </h2>
-                        <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
-                        <ul
-                          role="list"
-                          className="mt-4 flex justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
-                        >
-                          {[
-                            ['Spotify', SpotifyIcon, "https://open.spotify.com/show/6fDObJQiPUB825TybDKO2B"],
-                            ['Apple Podcast', ApplePodcastIcon, "https://podcasts.apple.com/us/podcast/legacy-code-rocks/id1146634772"],
-                            ['Overcast', OvercastIcon, "https://overcast.fm/itunes1146634772"],
-                            ['RSS Feed', RSSIcon, "https://feeds.libsyn.com/82186/rss"],
-                          ].map(([label, Icon, url]) => (
-                            <li key={label} className="flex">
-                              <Link
-                                href={url}
-                                className="group flex items-center"
-                                aria-label={label}
-                              >
-                                <Icon className="h-8 w-8 fill-slate-400 group-hover:fill-slate-600" />
-                                <span className="hidden sm:ml-3 sm:block">{label}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </section>
+                      <AboutSection className="mt-12 block" />
+                      <ListenSection className="mt-12 block" />
+                      <EngageSection className="mt-12 block" />
                     </div>
                   </div>
                 </section>
