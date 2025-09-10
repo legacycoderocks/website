@@ -93,8 +93,7 @@ function AboutSection(props) {
         )}
       >
         <p>
-          In this show, Hosts Andrea Goulet and M. Scott Ford of Corgibytes 
-          are out to change the way you think about legacy code.
+          In this show, hosts M. Scott Ford and Ray Myers are out to change the way you think about legacy code.
         </p>
         <p className="mt-3">
           If you&apos;re like a lot of people, when you hear the words &quot;legacy code&quot;
