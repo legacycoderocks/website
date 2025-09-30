@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
@@ -41,6 +42,7 @@
     "@storybook/react": "7.6.20",
     "@storybook/test": "7.6.20",
     "@tailwindcss/forms": "^0.5.3",
+    "chromatic": "^13.3.0",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
     "playwright": "^1.55.1",
