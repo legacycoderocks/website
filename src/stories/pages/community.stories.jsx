@@ -1,4 +1,4 @@
-import Community from './community'
+import Community from '../../pages/community'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 

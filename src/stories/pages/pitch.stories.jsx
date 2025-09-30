@@ -1,4 +1,4 @@
-import Pitch from './pitch'
+import Pitch from '../../pages/pitch'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 

@@ -1,4 +1,4 @@
-import Episode from './[episodeNumber]'
+import Episode from '../../../pages/episodes/[episodeNumber]'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 
