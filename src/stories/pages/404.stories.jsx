@@ -1,4 +1,4 @@
-import ErrorPage from './404'
+import ErrorPage from '../../pages/404'
 
 export default {
   title: 'Pages/404 Error',

@@ -1,4 +1,4 @@
-import PageNumber from './[pageNumber]'
+import PageNumber from '../../../../pages/episodes/pages/[pageNumber]'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 

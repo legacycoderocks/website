@@ -1,4 +1,4 @@
-import About from './about'
+import About from '../../pages/about'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 

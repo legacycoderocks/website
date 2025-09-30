@@ -1,4 +1,4 @@
-import Home from './index'
+import Home from '../../pages/index'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 

@@ -1,4 +1,4 @@
-import Supporters from './supporters'
+import Supporters from '../../pages/supporters'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 
