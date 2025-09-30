@@ -6,13 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@nathanhigh/patreon": "^0.5.2",
     "@next/env": "^15.2.4",
+    "@swc/helpers": "^0.4.14",
     "@tailwindcss/typography": "^0.5.7",
+    "ajv": "^8.17.1",
     "autoprefixer": "^10.4.12",
     "clsx": "^1.2.1",
     "focus-visible": "^5.2.0",
@@ -28,12 +32,22 @@
   "devDependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
+    "@storybook/addon-essentials": "7.6.20",
+    "@storybook/addon-interactions": "7.6.20",
+    "@storybook/addon-links": "7.6.20",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "7.6.20",
+    "@storybook/nextjs": "7.6.20",
+    "@storybook/react": "7.6.20",
+    "@storybook/test": "7.6.20",
     "@tailwindcss/forms": "^0.5.3",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.2",
+    "playwright": "^1.55.1",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.32.0",
+    "storybook": "7.6.20",
     "string-strip-html": "^13.2.3",
     "truncate-sentences": "^2.0.0"
   }
