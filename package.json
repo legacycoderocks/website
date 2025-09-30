@@ -50,7 +50,7 @@
     "playwright": "^1.55.1",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.6",
-    "sharp": "^0.32.0",
+    "sharp": "^0.34.4",
     "storybook": "7.6.20",
     "string-strip-html": "^13.2.3",
     "truncate-sentences": "^2.0.0"
