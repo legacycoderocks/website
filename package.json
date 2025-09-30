@@ -18,7 +18,7 @@
     "@swc/helpers": "^0.4.14",
     "@tailwindcss/typography": "^0.5.7",
     "ajv": "^8.17.1",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.21",
     "clsx": "^1.2.1",
     "focus-visible": "^5.2.0",
     "next": "13.3.0",
