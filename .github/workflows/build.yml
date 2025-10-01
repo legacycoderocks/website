@@ -43,7 +43,9 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - uses: actions/cache@v4
+      - name: Cache Next.js build
+        id: cache-nextjs
+        uses: actions/cache@v4
         with:
           # See here for caching with `yarn`, `bun` or other package managers https://github.com/actions/cache/blob/main/examples.md or you can leverage caching with actions/setup-node https://github.com/actions/setup-node
           path: |
