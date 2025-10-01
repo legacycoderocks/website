@@ -21,9 +21,3 @@ export const Default = {
     date: new Date('2023-04-15T12:00:00Z'),
   },
 }
-
-export const RecentDate = {
-  args: {
-    date: new Date(),
-  },
-}
