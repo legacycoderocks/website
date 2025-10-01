@@ -13,9 +13,9 @@ export function PatronTier({ tier }) {
           </li>
         ))}
       </ul>
-      <p>
+      <div>
         <SignUpButton href="https://www.patreon.com/legacycoderocks">Add your name here!</SignUpButton>
-      </p>
+      </div>
     </CardWithHeader>
   </>)
 }

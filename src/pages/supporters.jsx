@@ -67,11 +67,11 @@ export default function Supporters({ patrons }) {
           Slack</a> being limited to only paying members. Doing so 
           wouldn`&apos;`t be the best way to support Legacy Code Rocks mission.
         </p>
-        <p>
+        <div>
           <SignUpButton href="https://www.patreon.com/legacycoderocks">
             Join Now
           </SignUpButton>
-        </p>
+        </div>
       </ProseContainer>
     </>
   )
