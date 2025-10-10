@@ -34,3 +34,5 @@ yarn-error.log*
 
 # JetBrains IDEs
 .idea
+
+storybook-static
