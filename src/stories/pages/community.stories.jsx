@@ -1,4 +1,4 @@
-import Community from '../../pages/community'
+import Community from '../../app/community/page'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 
@@ -20,6 +20,4 @@ export default {
   ],
 }
 
-export const Default = {
-  render: () => <Community />,
-}
+export const Default = {}

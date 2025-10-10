@@ -1,4 +1,4 @@
-import About from '../../pages/about'
+import About from '../../app/about/page'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 
@@ -20,8 +20,4 @@ export default {
   ],
 }
 
-export const Default = {
-  args: {
-    episodeCount: 162,
-  },
-}
+export const Default = {}
