@@ -1,6 +1,8 @@
+'use client'
+
 import { Fragment, useId, useState } from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import clsx from 'clsx'
 import { Menu, Popover, Transition } from '@headlessui/react'
@@ -219,7 +221,7 @@ function classNames(...classes) {
 
 export function Layout({children}) {
   const copyrightYear = new Date().getFullYear();
-  const router = useRouter()
+  const pathname = usePathname()
 
   return (
     <>
@@ -285,10 +287,10 @@ export function Layout({children}) {
                             key={item.name}
                             href={item.href}
                             className={classNames(
-                              item.href == router.pathname ? 'text-black' : 'text-brand-yellow-900',
+                              item.href === pathname ? 'text-black' : 'text-brand-yellow-900',
                               'rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-30'
                             )}
-                            aria-current={item.href == router.pathname ? 'page' : undefined}
+                            aria-current={item.href === pathname ? 'page' : undefined}
                           >
                             {item.name}
                           </a>

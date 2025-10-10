@@ -1,14 +1,12 @@
-import ErrorPage from '../../pages/404'
+import NotFound from '../../app/not-found'
 
 export default {
   title: 'Pages/404 Error',
-  component: ErrorPage,
+  component: NotFound,
   tags: ['autodocs'],
   parameters: {
     layout: 'fullscreen',
   },
 }
 
-export const Default = {
-  render: () => <ErrorPage />,
-}
+export const Default = {}

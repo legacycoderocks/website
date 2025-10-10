@@ -1,3 +1,5 @@
+'use client'
+
 import { createContext, useContext, useMemo, useReducer, useRef } from 'react'
 
 const AudioPlayerContext = createContext()
