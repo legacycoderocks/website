@@ -9,13 +9,13 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic"
+    "chromatic": "node scripts/chromatic.js"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@nathanhigh/patreon": "^0.5.2",
     "@next/env": "^14.2.33",
-    "@swc/helpers": "^0.4.14",
+    "@swc/helpers": "^0.5.17",
     "@tailwindcss/typography": "^0.5.7",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.12",
@@ -33,26 +33,22 @@
   "devDependencies": {
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
-    "@storybook/addon-essentials": "7.6.20",
-    "@storybook/addon-interactions": "7.6.20",
-    "@storybook/addon-links": "7.6.20",
-    "@storybook/addon-onboarding": "^1.0.11",
-    "@storybook/blocks": "7.6.20",
-    "@storybook/nextjs": "7.6.20",
-    "@storybook/react": "7.6.20",
-    "@storybook/test": "7.6.20",
+    "@storybook/addon-links": "9.1.10",
+    "@storybook/addon-onboarding": "9.1.10",
+    "@storybook/nextjs": "9.1.10",
     "@tailwindcss/forms": "^0.5.3",
     "chromatic": "^13.3.0",
     "eslint": "8.26.0",
     "eslint-config-next": "^14.2.33",
-    "eslint-plugin-storybook": "^0.6.15",
+    "eslint-plugin-storybook": "^9.1.10",
     "ignore-loader": "^0.1.2",
     "playwright": "^1.55.1",
     "prettier": "^2.8.7",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.32.0",
-    "storybook": "7.6.20",
+    "storybook": "9.1.10",
     "string-strip-html": "^13.2.3",
-    "truncate-sentences": "^2.0.0"
+    "truncate-sentences": "^2.0.0",
+    "@storybook/addon-docs": "9.1.10"
   }
 }

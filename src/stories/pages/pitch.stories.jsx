@@ -1,4 +1,4 @@
-import Pitch from '../../pages/pitch'
+import Pitch from '../../app/pitch/page'
 import { AudioProvider } from '@/components/AudioProvider'
 import { Layout } from '@/components/Layout'
 
@@ -20,8 +20,4 @@ export default {
   ],
 }
 
-export const Default = {
-  args: {
-    episodeCount: 162,
-  },
-}
+export const Default = {}
