@@ -9,7 +9,7 @@
     "lint": "next lint",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "chromatic"
+    "chromatic": "node scripts/chromatic.js"
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {

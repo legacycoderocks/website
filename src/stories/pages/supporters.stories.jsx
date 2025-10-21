@@ -20,4 +20,14 @@ export default {
   ],
 }
 
-export const Default = {}
+export const Default = {
+  parameters: {
+    mockScenario: 'default',
+  },
+}
+
+export const MultipleTiers = {
+  parameters: {
+    mockScenario: 'multipleTiers',
+  },
+}

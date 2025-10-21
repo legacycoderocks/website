@@ -26,6 +26,9 @@ export const Default = {
       episodeNumber: '162',
     },
   },
+  parameters: {
+    mockScenario: 'default',
+  },
 }
 
 export const Episode160 = {
@@ -33,5 +36,19 @@ export const Episode160 = {
     params: {
       episodeNumber: '160',
     },
+  },
+  parameters: {
+    mockScenario: 'default',
+  },
+}
+
+export const LongContent = {
+  args: {
+    params: {
+      episodeNumber: '162',
+    },
+  },
+  parameters: {
+    mockScenario: 'longContent',
   },
 }

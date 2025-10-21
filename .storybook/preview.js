@@ -1,5 +1,6 @@
 import '../src/styles/tailwind.css'
 import 'focus-visible'
+import { withMockScenario } from './decorators/withMockScenario'
 
 // Set up module mocks for API calls
 if (typeof jest !== 'undefined') {
@@ -30,7 +31,9 @@ const preview = {
     backgrounds: {
       value: 'light'
     }
-  }
+  },
+
+  decorators: [withMockScenario],
 }
 
 export default preview

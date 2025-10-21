@@ -20,4 +20,20 @@ export default {
   ],
 }
 
-export const Default = {}
+export const Default = {
+  parameters: {
+    mockScenario: 'default',
+  },
+}
+
+export const FewEpisodes = {
+  parameters: {
+    mockScenario: 'fewEpisodes',
+  },
+}
+
+export const SinglePage = {
+  parameters: {
+    mockScenario: 'singlePage',
+  },
+}
