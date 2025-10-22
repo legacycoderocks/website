@@ -14,32 +14,33 @@
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
     "@nathanhigh/patreon": "^0.5.2",
-    "@next/env": "^14.2.33",
+    "@next/env": "^15.5.6",
     "@swc/helpers": "^0.5.17",
     "@tailwindcss/typography": "^0.5.7",
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.12",
     "clsx": "^1.2.1",
     "focus-visible": "^5.2.0",
-    "next": "^14.2.33",
+    "next": "^15.5.6",
     "postcss-focus-visible": "^6.0.4",
-    "react": "18.2.0",
+    "react": "^19.2.0",
     "react-aria": "^3.19.0",
-    "react-dom": "18.2.0",
+    "react-dom": "^19.2.0",
     "react-stately": "^3.17.0",
     "rss-to-json": "^2.1.0",
     "tailwindcss": "^3.3.0"
   },
   "devDependencies": {
-    "@headlessui/react": "^1.7.14",
+    "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.0.17",
+    "@storybook/addon-docs": "9.1.10",
     "@storybook/addon-links": "9.1.10",
     "@storybook/addon-onboarding": "9.1.10",
     "@storybook/nextjs": "9.1.10",
     "@tailwindcss/forms": "^0.5.3",
     "chromatic": "^13.3.0",
     "eslint": "8.26.0",
-    "eslint-config-next": "^14.2.33",
+    "eslint-config-next": "^15.5.6",
     "eslint-plugin-storybook": "^9.1.10",
     "ignore-loader": "^0.1.2",
     "playwright": "^1.55.1",
@@ -48,7 +49,6 @@
     "sharp": "^0.32.0",
     "storybook": "9.1.10",
     "string-strip-html": "^13.2.3",
-    "truncate-sentences": "^2.0.0",
-    "@storybook/addon-docs": "9.1.10"
+    "truncate-sentences": "^2.0.0"
   }
 }
