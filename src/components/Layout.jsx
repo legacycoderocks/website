@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { Menu, Popover, Transition } from '@headlessui/react'
+import { Menu, Popover, PopoverButton, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 
@@ -153,7 +153,7 @@ function ListenSection(props) {
         />
         <span className="ml-2.5">Listen</span>
       </h2>
-      <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+      <div className="h-px bg-linear-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
       <ul
         role="list"
         className="mt-4 flex lg:justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
@@ -190,7 +190,7 @@ function EngageSection(props) {
         />
         <span className="ml-2.5">Engage</span>
       </h2>
-      <div className="h-px bg-gradient-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
+      <div className="h-px bg-linear-to-r from-slate-200/0 via-slate-200 to-slate-200/0 lg:hidden" />
       <ul
         role="list"
         className="mt-4 flex lg:justify-center gap-10 text-base font-medium leading-7 text-slate-700 sm:gap-8 lg:flex-col lg:gap-4"
@@ -230,9 +230,9 @@ export function Layout({children}) {
           {({ open }) => (
             <>
               <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-                <div className="relative flex items-center justify-center py-5 lg:justify-between">
+                <div className="relative flex flex-wrap items-center justify-center py-5 lg:justify-between">
                   {/* Logo */}
-                  <div className="absolute left-0 -ml-2 top-2 flex-shrink-0 lg:static">
+                  <div className="absolute left-0 -ml-2 top-2 shrink-0 lg:static">
                     <a href="#">
                       <span className="sr-only">Legacy Code Rocks!</span>
                       <Image
@@ -266,16 +266,17 @@ export function Layout({children}) {
                   </div>
 
                   {/* Menu button */}
-                  <div className="absolute -mt-4 right-0 flex-shrink-0 lg:hidden">
+                  <div className="absolute -mt-4 right-0 shrink-0 lg:hidden">
                     {/* Mobile menu button */}
-                    <Popover.Button className="inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100 hover:bg-opacity-50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
+                    <PopoverButton className="group relative inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100 hover:bg-opacity-50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
+                      <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
                         <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                       ) : (
                         <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
                       )}
-                    </Popover.Button>
+                    </PopoverButton>
                   </div>
                 </div>
                 <div className="hidden border-t border-white border-opacity-20 py-5 lg:block">
@@ -359,10 +360,10 @@ export function Layout({children}) {
                               />
                             </div>
                             <div className="-mr-2">
-                              <Popover.Button className="inline-flex items-center justify-center rounded-md bg-brand-yellow-100 p-2 text-brand-yellow-900 hover:bg-brand-yellow-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow-900">
+                              <PopoverButton className="inline-flex items-center justify-center rounded-md bg-brand-yellow-100 p-2 text-brand-yellow-900 hover:bg-brand-yellow-200 hover:text-black focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-yellow-900">
                                 <span className="sr-only">Close menu</span>
                                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
-                              </Popover.Button>
+                              </PopoverButton>
                             </div>
                           </div>
                           <div className="mt-3 space-y-1 px-2">

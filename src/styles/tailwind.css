@@ -1,3 +1,37 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+@plugin '@tailwindcss/forms';
+
+@theme {
+  /* Custom font family */
+  --font-sans: Satoshi, ui-sans-serif, system-ui, sans-serif;
+
+  /* Custom spacing */
+  --spacing-18: 4.5rem;
+  --spacing-112: 28rem;
+  --spacing-120: 30rem;
+
+  /* Brand Yellow color scale */
+  --color-brand-yellow-50: #fffdf7;
+  --color-brand-yellow-100: #fffcee;
+  --color-brand-yellow-200: #fff7d6;
+  --color-brand-yellow-300: #fff2bd;
+  --color-brand-yellow-400: #ffe88b;
+  --color-brand-yellow-500: #ffde59;
+  --color-brand-yellow-600: #e6c850;
+  --color-brand-yellow-700: #bfa743;
+  --color-brand-yellow-800: #998535;
+  --color-brand-yellow-900: #7d6d2c;
+
+  /* Brand Red color scale */
+  --color-brand-red-50: #faf4f4;
+  --color-brand-red-100: #f6e9e9;
+  --color-brand-red-200: #e8c7c7;
+  --color-brand-red-300: #daa5a5;
+  --color-brand-red-400: #be6262;
+  --color-brand-red-500: #a21f1f;
+  --color-brand-red-600: #921c1c;
+  --color-brand-red-700: #7a1717;
+  --color-brand-red-800: #611313;
+  --color-brand-red-900: #4f0f0f;
+}
