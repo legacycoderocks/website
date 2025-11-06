@@ -268,7 +268,7 @@ export function Layout({children}) {
                   {/* Menu button */}
                   <div className="absolute -mt-4 right-0 shrink-0 lg:hidden">
                     {/* Mobile menu button */}
-                    <PopoverButton className="group relative inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100 hover:bg-opacity-50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
+                    <PopoverButton className="group relative inline-flex items-center justify-center rounded-md bg-transparent p-2 text-brand-yellow-900 hover:bg-brand-yellow-100/50 hover:text-black focus:outline-none focus:ring-2 focus:ring-brand-yellow-900">
                       <span className="absolute -inset-0.5" />
                       <span className="sr-only">Open main menu</span>
                       {open ? (
@@ -279,7 +279,7 @@ export function Layout({children}) {
                     </PopoverButton>
                   </div>
                 </div>
-                <div className="hidden border-t border-white border-opacity-20 py-5 lg:block">
+                <div className="hidden border-t border-white/20 py-5 lg:block">
                   <div className="grid grid-cols-3 items-center gap-8">
                     <div className="col-span-2">
                       <nav className="flex space-x-4">
@@ -289,7 +289,7 @@ export function Layout({children}) {
                             href={item.href}
                             className={classNames(
                               item.href === pathname ? 'text-black' : 'text-brand-yellow-900',
-                              'rounded-md bg-white bg-opacity-0 px-3 py-2 text-sm font-medium hover:bg-opacity-30'
+                              'rounded-md bg-white/0 px-3 py-2 text-sm font-medium hover:bg-white/30'
                             )}
                             aria-current={item.href === pathname ? 'page' : undefined}
                           >
@@ -332,7 +332,7 @@ export function Layout({children}) {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                   >
-                    <Popover.Overlay className="fixed inset-0 z-20 bg-black bg-opacity-25" />
+                    <Popover.Overlay className="fixed inset-0 z-20 bg-black/25" />
                   </Transition.Child>
 
                   <Transition.Child
@@ -348,7 +348,7 @@ export function Layout({children}) {
                       focus
                       className="absolute inset-x-0 top-0 z-30 mx-auto w-full max-w-3xl origin-top transform p-2 transition"
                     >
-                      <div className="divide-y divide-gray-500 rounded-lg bg-brand-yellow-500 shadow-lg ring-1 ring-black ring-opacity-5">
+                      <div className="divide-y divide-gray-500 rounded-lg bg-brand-yellow-500 shadow-lg ring-1 ring-black/5">
                         <div className="pb-2 pt-3">
                           <div className="flex items-center justify-between px-4">
                             <div>
