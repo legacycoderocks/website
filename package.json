@@ -29,7 +29,7 @@
     "react-dom": "^19.2.0",
     "react-stately": "^3.17.0",
     "rss-to-json": "^2.1.0",
-    "tailwindcss": "^4.1.16"
+    "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
     "@headlessui/react": "^2.2.9",
