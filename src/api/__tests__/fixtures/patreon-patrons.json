@@ -1,0 +1,33 @@
+[
+    {
+        "scope": "https://www.patreon.com:443",
+        "method": "GET",
+        "path": "/api/oauth2/v2/campaigns/13894891/members?fields%5Bcampaign%5D=created_at,creation_name,patron_count&fields%5Bmember%5D=full_name,patron_status&fields%5Btier%5D=title,amount_cents&include=currently_entitled_tiers&",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b0800000000000013bd954d6fdb300c86ff8ac0b30bc4edba75bef5fbebd8e350188ccdc4c4642a90686f45a0ff3e28396c4b833645051f2d4bf4fb3c04ad35b4a808d58f35700b152cf0271d717bf4150ad0971541053df573f25000aa7a9e0f4a01aa35ac50bd933a28ea10a092c1da021683b5b5609fce9d5b6ec89c4b4b3e38815880278bca4e42c7ab4d8d66f09e44ed4b4da2ac96da5a99fce6ddfe5cc77f73a59d109f638cc5cea66f1f0d0fd8288f546f97e17f8e0b373717defdca85707208c2d9e7fd5f76e82d93b9ec6852fbdfb3dabf62143457387298d27f39fb30c5c2f99efc7e8a6bed50ccf588928be2a0569465d65edcb01334372e68fae084cd38fefc34dc92f34b32b7e81bc6497b7092b5077728829db943ef279e882f5939ee51ccbd1f599693429c668578182ca379709de4bbe10ee3c8703f3fd2c8621ef37560ef383c17c0d2d8a1a5f6fd13bb0cd8bb41b46e483440352b601324fd893c11bcd6b2ebeeed7aa7b37f2a3e0d419125c54e997b4a84c9e2926523263da953b450956591f404b7b521f45bb782638cf10f320fcfdf52090000"
+        ],
+        "rawHeaders": {
+            "cache-control": "private",
+            "cf-cache-status": "DYNAMIC",
+            "cf-ray": "99cf6945ffa08cee-EWR",
+            "connection": "close",
+            "content-encoding": "gzip",
+            "content-type": "application/vnd.api+json",
+            "date": "Tue, 11 Nov 2025 17:11:52 GMT",
+            "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=ojzbZ4MijWejDdJQD%2BzwjklwJvvYUqBra3N1SXJ6Y41cZ5uYb910xnfcKJQF7sTWWqeKpUgnsi7kOJcadkYwtP1iEmSOW0Lmtpr3nCo2MEjPCs5QaTKiBsuFdQJv6MM9eelAErItEKrrxCpPBA%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "server": "cloudflare",
+            "set-cookie": "_cfuvid=w37YquXtky04dvnIBHjQrmhavsGsfiGfQrsRQxtK5so-1762881112287-0.0.1.1-604800000; path=/; domain=.patreon.com; HttpOnly; Secure; SameSite=None",
+            "strict-transport-security": "max-age=2592000",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-envoy-upstream-service-time": "120",
+            "x-patreon-sha": "8cdf1921c97b07e2dcb0d241705b21216f64351a",
+            "x-patreon-uuid": "a5086c61-0944-45f8-9ed2-65b0a5dba68c"
+        },
+        "responseIsBinary": false
+    }
+]

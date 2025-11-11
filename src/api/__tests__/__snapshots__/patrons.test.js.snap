@@ -1,0 +1,116 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Patreon API Integration > getMembershipLevels > should fetch and parse membership levels 1`] = `
+Map {
+  "fake-id-3" => {
+    "amount_cents": 500,
+    "title": "Sustainer",
+  },
+  "fake-id-4" => {
+    "amount_cents": 2500,
+    "title": "Maintainer",
+  },
+  "fake-id-5" => {
+    "amount_cents": 5000,
+    "title": "Mender",
+  },
+}
+`;
+
+exports[`Patreon API Integration > getPatrons > should fetch and parse active patrons 1`] = `
+Map {
+  "fake-id-7" => {
+    "full_name": "Bob Brown",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+  "fake-id-9" => {
+    "full_name": "Diana Davis",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+  "fake-id-11" => {
+    "full_name": "Fiona Foster",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+  "fake-id-13" => {
+    "full_name": "Hannah Harris",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+  "fake-id-14" => {
+    "full_name": "Ian Irving",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+  "fake-id-15" => {
+    "full_name": "Julia Johnson",
+    "patron_status": "active_patron",
+    "tiers": [
+      "fake-id-3",
+    ],
+  },
+}
+`;
+
+exports[`Patreon API Integration > getPatronsByTier > should organize patrons by membership tier 1`] = `
+[
+  {
+    "amount_cents": 500,
+    "patrons": [
+      {
+        "full_name": "Bob Brown",
+        "id": "fake-id-7",
+        "patron_status": "active_patron",
+      },
+      {
+        "full_name": "Diana Davis",
+        "id": "fake-id-9",
+        "patron_status": "active_patron",
+      },
+      {
+        "full_name": "Fiona Foster",
+        "id": "fake-id-11",
+        "patron_status": "active_patron",
+      },
+      {
+        "full_name": "Hannah Harris",
+        "id": "fake-id-13",
+        "patron_status": "active_patron",
+      },
+      {
+        "full_name": "Ian Irving",
+        "id": "fake-id-14",
+        "patron_status": "active_patron",
+      },
+      {
+        "full_name": "Julia Johnson",
+        "id": "fake-id-15",
+        "patron_status": "active_patron",
+      },
+    ],
+    "title": "Sustainer",
+  },
+  {
+    "amount_cents": 2500,
+    "patrons": [],
+    "title": "Maintainer",
+  },
+  {
+    "amount_cents": 5000,
+    "patrons": [],
+    "title": "Mender",
+  },
+]
+`;

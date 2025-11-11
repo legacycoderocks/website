@@ -1,0 +1,64 @@
+[
+    {
+        "scope": "https://www.patreon.com:443",
+        "method": "GET",
+        "path": "/api/oauth2/v2/campaigns/13894891?fields%5Bcampaign%5D=created_at,creation_name,patron_count&fields%5Bmember%5D=full_name,patron_status&fields%5Btier%5D=title,amount_cents&include=tiers&",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b08000000000000138592b16e833010865f05dd5a130c246de2a55bb74eadd4a18ad0c5be042b602338124591dfbd82a86a8ad4b279f8eef3ff9fee0a0619415dc11a50b0c723c5d6c42908e04b43a04063dda03d381080ccadddf54cdd30a05b42b6de150eeb01fc289123e3a38befa3ca9f28c29def39aae880fa12696fe819c46d8a4c810c0a3299ad6299c7d9e37bfaa4d28dca970b29e583944a4a10d020b7de15daf78e41a56910d05235feda95b61963b0a5767cdc8a7c4e9a643f4d0612829800f91cb09c035653601b4210609dae7a43663ed374b3580f850b4d8e3b5052005bae06faa52582305be17fdf4ade19dffa8ed1ba21f56cf1ffb5d92fef2b5af7a778bab0d9bcf7627266946e0554d61dc7818eaa3d2828999b4e25c9f97c5e0ca743de2db4af136c6ce2b1e7324b4e59f27dd05d92e6ebcd72bd4921842f93240f3a08030000"
+        ],
+        "rawHeaders": {
+            "cache-control": "private",
+            "cf-cache-status": "DYNAMIC",
+            "cf-ray": "99cf69489c314f69-EWR",
+            "connection": "close",
+            "content-encoding": "gzip",
+            "content-type": "application/vnd.api+json",
+            "date": "Tue, 11 Nov 2025 17:11:52 GMT",
+            "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=w33gzL3ADpwv26g4MFsbJEqv72FYLfq62XungnaX4I2LXmdj%2Faa9%2Fe%2BnHj%2FH6XnCSn6f7D2nK00geBOBbvd7WQXYvIbHfS2IdG%2B41Uilw50IkUu%2F3MwfM1HGu4hJfCKWZdgb41ipk6egfYrHgw%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "server": "cloudflare",
+            "set-cookie": "_cfuvid=svvp2bCqEVAitOWHk1D3OFIL1hpnB8ZqayrDop.t3aA-1762881112589-0.0.1.1-604800000; path=/; domain=.patreon.com; HttpOnly; Secure; SameSite=None",
+            "strict-transport-security": "max-age=2592000",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-envoy-upstream-service-time": "61",
+            "x-patreon-sha": "8cdf1921c97b07e2dcb0d241705b21216f64351a",
+            "x-patreon-uuid": "b126e050-e7ec-4fdc-b604-41d888d325b0"
+        },
+        "responseIsBinary": false
+    },
+    {
+        "scope": "https://www.patreon.com:443",
+        "method": "GET",
+        "path": "/api/oauth2/v2/campaigns/13894891/members?fields%5Bcampaign%5D=created_at,creation_name,patron_count&fields%5Bmember%5D=full_name,patron_status&fields%5Btier%5D=title,amount_cents&include=currently_entitled_tiers&",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b0800000000000013bd954d6fdb300c86ff8ac0b30bc4edba75bef5fbebd8e350188ccdc4c4642a90686f45a0ff3e28396c4b833645051f2d4bf4fb3c04ad35b4a808d58f35700b152cf0271d717bf4150ad0971541053df573f25000aa7a9e0f4a01aa35ac50bd933a28ea10a092c1da021683b5b5609fce9d5b6ec89c4b4b3e38815880278bca4e42c7ab4d8d66f09e44ed4b4da2ac96da5a99fce6ddfe5cc77f73a59d109f638cc5cea66f1f0d0fd8288f546f97e17f8e0b373717defdca85707208c2d9e7fd5f76e82d93b9ec6852fbdfb3dabf62143457387298d27f39fb30c5c2f99efc7e8a6bed50ccf588928be2a0569465d65edcb01334372e68fae084cd38fefc34dc92f34b32b7e81bc6497b7092b5077728829db943ef279e882f5939ee51ccbd1f599693429c668578182ca379709de4bbe10ee3c8703f3fd2c8621ef37560ef383c17c0d2d8a1a5f6fd13bb0cd8bb41b46e483440352b601324fd893c11bcd6b2ebeeed7aa7b37f2a3e0d419125c54e997b4a84c9e2926523263da953b450956591f404b7b521f45bb782638cf10f320fcfdf52090000"
+        ],
+        "rawHeaders": {
+            "cache-control": "private",
+            "cf-cache-status": "DYNAMIC",
+            "cf-ray": "99cf694a6a1d6e26-EWR",
+            "connection": "close",
+            "content-encoding": "gzip",
+            "content-type": "application/vnd.api+json",
+            "date": "Tue, 11 Nov 2025 17:11:52 GMT",
+            "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=B2u7xzaGY58ADtwtDd4zyEQxJENnjb3fAEoc%2FiDNz7UhMeCzhCCmzSFD7C0HBkvFN6asmCpxQ%2FG%2FIR7mBHHQLuuYtk9RFjt%2BocQGbxhAGUtPL6Jj72xnmE3YFS3qTC7mTkWISTPlOQe3tziHFQ%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "server": "cloudflare",
+            "set-cookie": "_cfuvid=dIsuAKG_L7IAwN5Sx8zTsnDpCR8W1gzkDFvMoc7l1BM-1762881112923-0.0.1.1-604800000; path=/; domain=.patreon.com; HttpOnly; Secure; SameSite=None",
+            "strict-transport-security": "max-age=2592000",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-envoy-upstream-service-time": "130",
+            "x-patreon-sha": "8cdf1921c97b07e2dcb0d241705b21216f64351a",
+            "x-patreon-uuid": "d371aef2-120c-44dc-a28d-a767884e9358"
+        },
+        "responseIsBinary": false
+    }
+]

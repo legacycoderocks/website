@@ -1,29 +1,50 @@
-import { parse } from 'rss-to-json'
+import { XMLParser } from 'fast-xml-parser'
 import { stripHtml } from 'string-strip-html'
 import truncate from 'truncate-sentences'
 
 const EPISODES_PER_PAGE = 10
 
-export async function getEpisodes() {
-  let feed = await parse('https://feeds.libsyn.com/82186/rss')
+export async function getEpisodes(feedUrl = 'https://feeds.libsyn.com/82186/rss') {
+  // Fetch the RSS feed XML
+  const response = await fetch(feedUrl)
+  const xmlText = await response.text()
 
-  return feed.items.map(
-    ({ id, title, description, enclosures, published, content }, index) => {
-      const number = feed.items.length - index
-      const cleanedDescription = truncate(stripHtml(description).result, 200);
+  // Parse XML to JavaScript object
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: '@_',
+    // Preserve text content when there are attributes
+    textNodeName: '#text'
+  })
+  const parsed = parser.parse(xmlText)
+
+  // Extract items from the RSS feed structure
+  const items = parsed.rss?.channel?.item || []
+
+  return items.map(
+    (item, index) => {
+      const number = items.length - index
+      const description = stripHtml(item.description || '').result
+      const cleanedDescription = truncate(description, 200);
+      const content = item['content:encoded'] || ''
       const cleanedContent = content
         .replace(cleanedDescription, '')
         .replace(/<p( dir="ltr")?>\W+<\/p>/m, '');
+      // Extract guid - it might be a string or an object with #text
+      const guid = typeof item.guid === 'string'
+        ? item.guid
+        : item.guid?.['#text'] ?? null;
+
       return {
-        id: id ?? null,
+        id: guid,
         number,
-        title: `${number}: ${title}`,
-        published,
+        title: `${number}: ${item.title}`,
+        published: new Date(item.pubDate).getTime(),
         description: cleanedDescription,
-        audio: enclosures.map((enclosure) => ({
-          src: enclosure.url,
-          type: enclosure.type,
-        }))[0],
+        audio: {
+          src: item.enclosure?.['@_url'],
+          type: item.enclosure?.['@_type'],
+        },
         content: cleanedContent,
       }
     }
