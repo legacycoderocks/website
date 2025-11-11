@@ -3,7 +3,7 @@ import typography from '@tailwindcss/typography'
 import forms from '@tailwindcss/forms'
 
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
   content: ['./src/**/*.{js,jsx}'],
   theme: {
     extend: {
@@ -48,3 +48,5 @@ export default {
     forms,
   ],
 }
+
+export default config
