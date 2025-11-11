@@ -36,3 +36,4 @@ yarn-error.log*
 .idea
 
 storybook-static
+build-storybook.log
