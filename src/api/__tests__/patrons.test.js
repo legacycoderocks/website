@@ -98,9 +98,29 @@ describe('Patreon API Integration', () => {
     nock.back.setMode(process.env.NOCK_BACK_MODE || 'lockdown')
   })
 
+  // Helper to normalize query parameters for matching
+  function normalizeQueryParams(path) {
+    const [pathname, queryString] = path.split('?')
+    if (!queryString) return path
+
+    // Parse query params
+    const params = new URLSearchParams(queryString)
+
+    // Sort params alphabetically
+    const sortedParams = new URLSearchParams(
+      [...params.entries()].sort((a, b) => a[0].localeCompare(b[0]))
+    )
+
+    return `${pathname}?${sortedParams.toString()}`
+  }
+
   describe('getMembershipLevels', () => {
     it('should fetch and parse membership levels', async () => {
       const { nockDone } = await nock.back('patreon-membership-levels.json', {
+        before: (scope) => {
+          // Normalize query parameters to ignore order differences
+          scope.filteringPath = (path) => normalizeQueryParams(path)
+        },
         afterRecord: (scopes) => {
           return scopes.map(scope => {
             try {
@@ -157,6 +177,10 @@ describe('Patreon API Integration', () => {
   describe('getPatrons', () => {
     it('should fetch and parse active patrons', async () => {
       const { nockDone } = await nock.back('patreon-patrons.json', {
+        before: (scope) => {
+          // Normalize query parameters to ignore order differences
+          scope.filteringPath = (path) => normalizeQueryParams(path)
+        },
         afterRecord: (scopes) => {
           return scopes.map(scope => {
             try {
@@ -213,6 +237,10 @@ describe('Patreon API Integration', () => {
   describe('getPatronsByTier', () => {
     it('should organize patrons by membership tier', async () => {
       const { nockDone } = await nock.back('patreon-by-tier.json', {
+        before: (scope) => {
+          // Normalize query parameters to ignore order differences
+          scope.filteringPath = (path) => normalizeQueryParams(path)
+        },
         afterRecord: (scopes) => {
           return scopes.map(scope => {
             try {
