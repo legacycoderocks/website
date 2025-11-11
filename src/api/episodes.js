@@ -1,38 +1,49 @@
-import Parser from 'rss-parser'
+import { XMLParser } from 'fast-xml-parser'
 import { stripHtml } from 'string-strip-html'
 import truncate from 'truncate-sentences'
 
 const EPISODES_PER_PAGE = 10
 
 export async function getEpisodes(feedUrl = 'https://feeds.libsyn.com/82186/rss') {
-  const parser = new Parser({
-    customFields: {
-      item: [
-        ['content:encoded', 'contentEncoded'],
-        ['description', 'description']
-      ]
-    }
-  })
-  let feed = await parser.parseURL(feedUrl)
+  // Fetch the RSS feed XML
+  const response = await fetch(feedUrl)
+  const xmlText = await response.text()
 
-  return feed.items.map(
+  // Parse XML to JavaScript object
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: '@_',
+    // Preserve text content when there are attributes
+    textNodeName: '#text'
+  })
+  const parsed = parser.parse(xmlText)
+
+  // Extract items from the RSS feed structure
+  const items = parsed.rss?.channel?.item || []
+
+  return items.map(
     (item, index) => {
-      const number = feed.items.length - index
+      const number = items.length - index
       const description = stripHtml(item.description || '').result
       const cleanedDescription = truncate(description, 200);
-      const content = item.contentEncoded || ''
+      const content = item['content:encoded'] || ''
       const cleanedContent = content
         .replace(cleanedDescription, '')
         .replace(/<p( dir="ltr")?>\W+<\/p>/m, '');
+      // Extract guid - it might be a string or an object with #text
+      const guid = typeof item.guid === 'string'
+        ? item.guid
+        : item.guid?.['#text'] ?? null;
+
       return {
-        id: item.guid ?? null,
+        id: guid,
         number,
         title: `${number}: ${item.title}`,
         published: new Date(item.pubDate).getTime(),
         description: cleanedDescription,
         audio: {
-          src: item.enclosure?.url,
-          type: item.enclosure?.type,
+          src: item.enclosure?.['@_url'],
+          type: item.enclosure?.['@_type'],
         },
         content: cleanedContent,
       }

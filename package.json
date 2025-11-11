@@ -24,6 +24,7 @@
     "ajv": "^8.17.1",
     "autoprefixer": "^10.4.21",
     "clsx": "^1.2.1",
+    "fast-xml-parser": "^5.3.1",
     "focus-visible": "^5.2.0",
     "next": "16.0.1",
     "postcss-focus-visible": "^6.0.4",
@@ -31,7 +32,6 @@
     "react-aria": "^3.19.0",
     "react-dom": "19.2.0",
     "react-stately": "^3.17.0",
-    "rss-parser": "^3.13.0",
     "tailwindcss": "^4.1.17"
   },
   "devDependencies": {
