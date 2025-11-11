@@ -2,6 +2,21 @@ import { setMockScenario, resetMockScenario } from '../../src/api/__mocks__/mock
 import { useEffect } from 'react'
 
 /**
+ * Wrapper component that uses hooks to manage mock scenario
+ */
+function MockScenarioWrapper({ scenario, children }) {
+  useEffect(() => {
+    setMockScenario(scenario)
+    return () => resetMockScenario()
+  }, [scenario])
+
+  // Also set it immediately for server component rendering
+  setMockScenario(scenario)
+
+  return children
+}
+
+/**
  * Storybook decorator that sets the mock data scenario before rendering
  *
  * Usage in stories:
@@ -14,13 +29,9 @@ import { useEffect } from 'react'
 export const withMockScenario = (Story, context) => {
   const scenario = context.parameters.mockScenario || 'default'
 
-  useEffect(() => {
-    setMockScenario(scenario)
-    return () => resetMockScenario()
-  }, [scenario])
-
-  // Also set it immediately for server component rendering
-  setMockScenario(scenario)
-
-  return <Story />
+  return (
+    <MockScenarioWrapper scenario={scenario}>
+      <Story />
+    </MockScenarioWrapper>
+  )
 }

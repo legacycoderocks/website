@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import Link from 'next/link'
 
 import { useAudioPlayer } from '@/components/AudioProvider'
@@ -28,11 +28,7 @@ export function AudioPlayer() {
 
   let wasPlayingRef = useRef(false)
 
-  let [currentTime, setCurrentTime] = useState(player.currentTime)
-
-  useEffect(() => {
-    setCurrentTime(null)
-  }, [player.currentTime])
+  let [timeOverride, setTimeOverride] = useState(null)
 
   if (!player.meta) {
     return null
@@ -66,13 +62,14 @@ export function AudioPlayer() {
             label="Current time"
             maxValue={player.duration}
             step={1}
-            value={[currentTime ?? player.currentTime]}
-            onChange={([v]) => setCurrentTime(v)}
+            value={[timeOverride ?? player.currentTime]}
+            onChange={([v]) => setTimeOverride(v)}
             onChangeEnd={(value) => {
               player.seek(value)
               if (wasPlayingRef.current) {
                 player.play()
               }
+              setTimeOverride(null)
             }}
             numberFormatter={{ format: formatHumanTime }}
             onChangeStart={() => {
