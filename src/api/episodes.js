@@ -1,29 +1,39 @@
-import { parse } from 'rss-to-json'
+import Parser from 'rss-parser'
 import { stripHtml } from 'string-strip-html'
 import truncate from 'truncate-sentences'
 
 const EPISODES_PER_PAGE = 10
 
-export async function getEpisodes() {
-  let feed = await parse('https://feeds.libsyn.com/82186/rss')
+export async function getEpisodes(feedUrl = 'https://feeds.libsyn.com/82186/rss') {
+  const parser = new Parser({
+    customFields: {
+      item: [
+        ['content:encoded', 'contentEncoded'],
+        ['description', 'description']
+      ]
+    }
+  })
+  let feed = await parser.parseURL(feedUrl)
 
   return feed.items.map(
-    ({ id, title, description, enclosures, published, content }, index) => {
+    (item, index) => {
       const number = feed.items.length - index
-      const cleanedDescription = truncate(stripHtml(description).result, 200);
+      const description = stripHtml(item.description || '').result
+      const cleanedDescription = truncate(description, 200);
+      const content = item.contentEncoded || ''
       const cleanedContent = content
         .replace(cleanedDescription, '')
         .replace(/<p( dir="ltr")?>\W+<\/p>/m, '');
       return {
-        id: id ?? null,
+        id: item.guid ?? null,
         number,
-        title: `${number}: ${title}`,
-        published,
+        title: `${number}: ${item.title}`,
+        published: new Date(item.pubDate).getTime(),
         description: cleanedDescription,
-        audio: enclosures.map((enclosure) => ({
-          src: enclosure.url,
-          type: enclosure.type,
-        }))[0],
+        audio: {
+          src: item.enclosure?.url,
+          type: item.enclosure?.type,
+        },
         content: cleanedContent,
       }
     }
