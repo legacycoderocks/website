@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "node scripts/chromatic.cjs"
@@ -29,6 +30,7 @@
     "react-aria": "^3.19.0",
     "react-dom": "19.2.0",
     "react-stately": "^3.17.0",
+    "rss-parser": "^3.13.0",
     "rss-to-json": "^2.1.0",
     "tailwindcss": "^4.1.17"
   },
@@ -47,12 +49,14 @@
     "eslint-config-next": "16.0.1",
     "eslint-plugin-storybook": "^10.0.6",
     "ignore-loader": "^0.1.2",
+    "nock": "^14.0.10",
     "playwright": "^1.55.1",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.34.5",
     "storybook": "10.0.6",
     "string-strip-html": "^13.5.0",
-    "truncate-sentences": "^2.0.0"
+    "truncate-sentences": "^2.0.0",
+    "vitest": "^4.0.8"
   }
 }
