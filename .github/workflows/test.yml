@@ -6,6 +6,9 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 
+env:
+  PATREON_CREATOR_ACCESS_TOKEN: ${{ secrets.PATREON_CREATOR_ACCESS_TOKEN }}
+  PATREON_CAMPAIGN_ID: ${{ secrets.PATREON_CAMPAIGN_ID }}
 
 jobs:
   test:
