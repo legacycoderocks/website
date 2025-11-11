@@ -9,6 +9,8 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "vitest",
+    "test:record-fixtures": "NOCK_BACK_MODE=record vitest",
+    "test:update-fixtures": "NOCK_BACK_MODE=update vitest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "node scripts/chromatic.cjs"

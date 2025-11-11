@@ -1,0 +1,33 @@
+[
+    {
+        "scope": "https://www.patreon.com:443",
+        "method": "GET",
+        "path": "/api/oauth2/v2/campaigns/13894891?fields%5Bcampaign%5D=created_at,creation_name,patron_count&fields%5Bmember%5D=full_name,patron_status&fields%5Btier%5D=title,amount_cents&include=tiers&",
+        "body": "",
+        "status": 200,
+        "response": [
+            "1f8b08000000000000138592b16e833010865f05dd5a130c246de2a55bb74eadd4a18ad0c5be042b602338124591dfbd82a86a8ad4b279f8eef3ff9fee0a0619415dc11a50b0c723c5d6c42908e04b43a04063dda03d381080ccadddf54cdd30a05b42b6de150eeb01fc289123e3a38befa3ca9f28c29def39aae880fa12696fe819c46d8a4c810c0a3299ad6299c7d9e37bfaa4d28dca970b29e583944a4a10d020b7de15daf78e41a56910d05235feda95b61963b0a5767cdc8a7c4e9a643f4d0612829800f91cb09c035653601b4210609dae7a43663ed374b3580f850b4d8e3b5052005bae06faa52582305be17fdf4ade19dffa8ed1ba21f56cf1ffb5d92fef2b5af7a778bab0d9bcf7627266946e0554d61dc7818eaa3d2828999b4e25c9f97c5e0ca743de2db4af136c6ce2b1e7324b4e59f27dd05d92e6ebcd72bd4921842f93240f3a08030000"
+        ],
+        "rawHeaders": {
+            "cache-control": "private",
+            "cf-cache-status": "DYNAMIC",
+            "cf-ray": "99cf69442ed2c62c-EWR",
+            "connection": "close",
+            "content-encoding": "gzip",
+            "content-type": "application/vnd.api+json",
+            "date": "Tue, 11 Nov 2025 17:11:51 GMT",
+            "nel": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}",
+            "report-to": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v4?s=kB08blAJPAJUC3G7rzpQTtbgjx8XQo4XErwwLTOUkrzE8Se3wQ2JrUQyxzfHCf9no7XbvtPmzmYAUnVCRxUytlb%2F%2Bi12OLnnd8aGxiTUXDbFel7yEbEt6Rsb%2BJ92tr3yJj4uF9fKuR4WMZ%2BR%2Fg%3D%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}",
+            "server": "cloudflare",
+            "set-cookie": "_cfuvid=gfFt7lsGP57O6qbcXSMXBcQkOA8gvUk6fROWQNC1eiE-1762881111884-0.0.1.1-604800000; path=/; domain=.patreon.com; HttpOnly; Secure; SameSite=None",
+            "strict-transport-security": "max-age=2592000",
+            "transfer-encoding": "chunked",
+            "vary": "Accept-Encoding",
+            "x-content-type-options": "nosniff",
+            "x-envoy-upstream-service-time": "72",
+            "x-patreon-sha": "8cdf1921c97b07e2dcb0d241705b21216f64351a",
+            "x-patreon-uuid": "64b3ecd0-4284-4fab-9481-70f41756144d"
+        },
+        "responseIsBinary": false
+    }
+]
