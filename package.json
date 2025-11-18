@@ -55,7 +55,7 @@
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.2.6",
     "sharp": "^0.34.5",
-    "storybook": "10.0.6",
+    "storybook": "10.0.7",
     "string-strip-html": "^13.5.0",
     "truncate-sentences": "^2.0.0",
     "vitest": "^4.0.8"
