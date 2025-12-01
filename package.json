@@ -58,6 +58,6 @@
     "storybook": "10.0.8",
     "string-strip-html": "^13.5.0",
     "truncate-sentences": "^2.0.0",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.14"
   }
 }
